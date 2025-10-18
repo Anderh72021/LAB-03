@@ -1,0 +1,23 @@
+public class DoctorGeneral extends TrabajadorMedico {
+    private String especializacion;
+    private int capacidadPacientes;
+    private double tarifaConsulta;
+
+    public DoctorGeneral(String id, String nombre, String departamento, int aniosExperiencia, double salarioBase,
+                         String especializacion, int capacidadPacientes, double tarifaConsulta) {
+        super(id, nombre, departamento, aniosExperiencia, salarioBase);
+        this.especializacion = especializacion;
+        this.capacidadPacientes = capacidadPacientes;
+        this.tarifaConsulta = tarifaConsulta;
+    }
+
+    @Override
+    public double calcularSalario() {
+        return salarioBase + (capacidadPacientes * tarifaConsulta);
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + ", Especialización: " + especializacion;
+    }
+}
