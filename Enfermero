@@ -1,0 +1,24 @@
+public class Enfermero extends TrabajadorMedico {
+    private String turno;
+    private String nivelCertificacion;
+
+    public Enfermero(String id, String nombre, String departamento, int aniosExperiencia, double salarioBase,
+                     String turno, String nivelCertificacion) {
+        super(id, nombre, departamento, aniosExperiencia, salarioBase);
+        this.turno = turno;
+        this.nivelCertificacion = nivelCertificacion;
+    }
+
+    @Override
+    public double calcularSalario() {
+        if (turno.equals("Nocturno")) {
+            return salarioBase + 500; // Bono nocturno
+        }
+        return salarioBase;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + ", Turno: " + turno;
+    }
+}
