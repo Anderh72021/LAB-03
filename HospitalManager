@@ -1,0 +1,27 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class HospitalManager {
+    private List<TrabajadorMedico> personal = new ArrayList<>();
+    private List<CitaMedica> citas = new ArrayList<>();
+
+    public void contratar(TrabajadorMedico trabajador) {
+        personal.add(trabajador);
+    }
+
+    public void asignarCita(CitaMedica cita) {
+        citas.add(cita);
+    }
+
+    public void calcularNomina() {
+        for (TrabajadorMedico t : personal) {
+            System.out.println(t.nombre + ": $" + t.calcularSalario());
+        }
+    }
+
+    public void listarCitas() {
+        for (CitaMedica c : citas) {
+            System.out.println(c);
+        }
+    }
+}
