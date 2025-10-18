@@ -1,0 +1,25 @@
+public class Main {
+    public static void main(String[] args) {
+        HospitalManager hospital = new HospitalManager();
+
+        // Contratacion de personal
+        DoctorGeneral doctor1 = new DoctorGeneral("D001", "Dr. López", "Cardiología", 10, 5000, "Cardiólogo", 8, 200);
+        Enfermero enfermero1 = new Enfermero("E001", "Ana Martínez", "Emergencia", 5, 3000, "Nocturno", "Avanzado");
+
+        hospital.contratar(doctor1);
+        hospital.contratar(enfermero1);
+
+        // Asignar citas
+        CitaMedica cita1 = new CitaMedica("C001", "Juan Pérez", doctor1, "2025-10-20 10:00", "Consulta");
+        hospital.asignarCita(cita1);
+
+        // Reagendar cita
+        cita1.reagendar("2025-10-21 11:00");
+
+        // Calcular 
+        hospital.calcularNomina();
+
+        // Listas
+        hospital.listarCitas();
+    }
+}
