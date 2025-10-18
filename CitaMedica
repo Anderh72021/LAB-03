@@ -1,0 +1,28 @@
+public class CitaMedica {
+    private String id;
+    private String paciente;
+    private TrabajadorMedico trabajadorAsignado;
+    private String fechaHora;
+    private String tipo;
+    private String estado;
+
+    public CitaMedica(String id, String paciente, TrabajadorMedico trabajadorAsignado, String fechaHora, String tipo) {
+        this.id = id;
+        this.paciente = paciente;
+        this.trabajadorAsignado = trabajadorAsignado;
+        this.fechaHora = fechaHora;
+        this.tipo = tipo;
+        this.estado = "PROGRAMADA";
+    }
+
+    public void reagendar(String nuevaFechaHora) {
+        this.fechaHora = nuevaFechaHora;
+        this.estado = "REAGENDADA";
+        System.out.println("Cita reagendada para " + nuevaFechaHora);
+    }
+
+    @Override
+    public String toString() {
+        return "Cita ID: " + id + ", Paciente: " + paciente + ", Estado: " + estado;
+    }
+}
